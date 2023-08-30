@@ -47,12 +47,35 @@ function writeToFile(fileName, data) {
     if (err) {
       console.error(err);
     } else {
-      console.log("File created successfully!");
+      console.log("ReadMe Created!");
     }
   });
 }
 
-// TODO: Create a function to initialize app
+function generateReadmeContent(answers) {
+  return `
+# ${answers.title}
+
+## Description
+${answers.description}
+
+## Installation
+${answers.installation}
+
+## Usage
+${answers.usage}
+
+## License
+This project is licensed under the ${answers.license} license.
+
+## Contributing
+${answers.contributing}
+
+## Tests
+${answers.test}
+`;
+}
+
 function init() {
   inquirer
     .prompt(questions)
